@@ -21,13 +21,14 @@
 			while (!done)
 			{
 
-				await Task.Delay(millisecondsDelay: 100);
+				await Task.Delay(millisecondsDelay: 100); //Simulate the Actual Work
 
 				percentComplete++;
 
 				progress?.Report(value: percentComplete);
 
-				if (percentComplete > 99)
+				bool isWorkDone = percentComplete > 99;
+				if (isWorkDone) 
 					done = true;
 
 			}
